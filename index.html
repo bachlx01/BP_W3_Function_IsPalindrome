@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let word = prompt('Enter a word: ');
+    let a = isPalindrome(word.split(''));
+    alert(a);
+
+    function isPalindrome(word) {
+
+        if (word[0] != word[word.length - 1]) {
+            return false;
+        } else {
+            word.pop();
+            word.shift();
+            if (word.length <= 1) {
+                return true;
+            } else
+                return isPalindrome(word)
+        }
+    }
+
+    function checkPalindrome() {
+        let word = prompt('Enter a word');
+        let arrayWord = word.split('');
+        let arrayReverse = arrayWord.reverse();
+        let confirm1 = true;
+        for (let i = 0; i < arrayWord.length; i++) {
+            if (arrayWord[i] != arrayReverse[arrayReverse.length - 1 - i]) {
+                confirm1 = false;
+                break;
+            }
+        }
+        if (confirm1) alert('this is palindrome');
+        else alert('this word is not palindrome');
+    }
+</script>
+</body>
+</html>
